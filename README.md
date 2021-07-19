@@ -29,13 +29,13 @@ All endpoints accept valid JSON and respond with valid JSON.
 All Time values to be provided in "YYYY-mm-ddTHH:MM:SSZ" format only. e.g. 2021-07-18T13:30:00Z
 <br/> <br/>
 
-### /signup
+### POST: /signup
 
 ---
 
 The first step is to hit the /signup endpoint to get a Token
 
-#### Input Format:
+#### Request Body:
 
 ```json
 {
@@ -50,7 +50,7 @@ The first step is to hit the /signup endpoint to get a Token
 
 - **usertype (String)** : Type of User. Allowed values - "Patient" or "Doctor"
 
-#### Output Format:
+#### Response Body:
 
 ```json
 {
@@ -62,13 +62,13 @@ The first step is to hit the /signup endpoint to get a Token
 
 <br/>
 
-### /schedule
+### POST: /schedule
 
 ---
 
 Next the Doctor can create his/her schedule
 
-#### Input Format:
+#### Request Body:
 
 ```json
 {
@@ -86,7 +86,7 @@ Next the Doctor can create his/her schedule
 
 - **token** : Token generated in Step 1
 
-#### Output Format:
+#### Response Body:
 
 ```json
 {
@@ -97,13 +97,13 @@ Next the Doctor can create his/her schedule
 
 <br/>
 
-### /list
+### POST: /list
 
 ---
 
 Patient can list Doctor's schedule
 
-#### Input Format:
+#### Request Body:
 
 ```json
 {
@@ -118,7 +118,7 @@ Patient can list Doctor's schedule
 
 - **token** : Token generated in Step 1
 
-#### Output Format:
+#### Response Body:
 
 ```json
 {
@@ -173,13 +173,13 @@ Patient can list Doctor's schedule
 
 <br/>
 
-### /book
+### POST: /book
 
 ---
 
 Patient can book an Appointment
 
-#### Input Format:
+#### Request Body:
 
 ```json
 {
@@ -197,7 +197,7 @@ Patient can book an Appointment
 
 - **token** : Token generated in Step 1
 
-#### Output Format:
+#### Response Body:
 
 ```json
 {
@@ -212,7 +212,7 @@ Patient can book an Appointment
 <br/>
 Another Patient cant book the same slot
 
-##### Input:
+##### Request:
 
 ```json
 {
@@ -222,7 +222,7 @@ Another Patient cant book the same slot
 }
 ```
 
-#### Output:
+#### Response:
 
 ```json
 {
@@ -235,7 +235,7 @@ Another Patient cant book the same slot
 <br/>
 They can book a different slot
 
-##### Input:
+##### Request:
 
 ```json
 {
@@ -245,7 +245,7 @@ They can book a different slot
 }
 ```
 
-#### Output:
+#### Response:
 
 ```json
 {
@@ -311,13 +311,13 @@ Schedule listing after 2 slots were booked
 
 <br/>
 
-### /cancel
+### POST: /cancel
 
 ---
 
 Patient can cancel their appointment
 
-#### Input Format:
+#### Request Body:
 
 ```json
 {
@@ -332,7 +332,7 @@ Patient can cancel their appointment
 
 - **token** : Token generated in Step 1
 
-#### Output Format:
+#### Response Body:
 
 ```json
 {
@@ -398,7 +398,7 @@ Schedule listing after 1 cancellation
 <br/>
 Doctor can also cancel an appointment
 
-#### Input:
+#### Request:
 
 ```json
 {
@@ -407,7 +407,7 @@ Doctor can also cancel an appointment
 }
 ```
 
-#### Output:
+#### Response:
 
 ```json
 {
