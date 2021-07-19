@@ -139,7 +139,7 @@ func (ar *apptRepo) CreatePatientAccount(name string) (int, errors.AppointmentEr
 	}
 
 	if count != 0 {
-		return id, errors.NewInternalServerError("account already exists", err)
+		return id, errors.NewGeneralError("account already exists", nil)
 	}
 
 	query = "INSERT INTO patient(name) VALUES (?);"
